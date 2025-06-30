@@ -7,10 +7,12 @@ import { ProductCard } from '../components/ProductCard';
 import { TestimonialCard } from '../components/TestimonialCard';
 import { MagneticButton } from '../components/MagneticButton';
 import { ScrollReveal } from '../components/ScrollReveal';
+import { SamplePopup } from '../components/SamplePopup';
 
 const Index = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -31,17 +33,17 @@ const Index = () => {
     },
     {
       name: "The 'Architect' Backpack", 
-      image: "https://i.ibb.co/bgWBwNk/architect.png",
+      image: "https://i.ibb.co/bgWBwNkX/architect.png",
       description: "From boardroom to construction site"
     },
     {
       name: "The 'Creator' Crossbody",
-      image: "https://i.ibb.co/0VBLBbc/creator.png", 
+      image: "https://i.ibb.co/0VBLBbcD/creator.png", 
       description: "Creative freedom, organized"
     },
     {
       name: "The 'Consultant' Satchel",
-      image: "https://i.ibb.co/PGhbKLp/consultant.png",
+      image: "https://i.ibb.co/PGhbKLpM/consultant.png",
       description: "Professional precision"
     }
   ];
@@ -97,9 +99,12 @@ const Index = () => {
               </a>
             </div>
             <MagneticButton>
-              <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full font-medium shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <button 
+                onClick={() => setIsPopupOpen(true)}
+                className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full font-medium shadow-lg hover:shadow-xl transition-shadow duration-300"
+              >
                 Shop Collection
-              </span>
+              </button>
             </MagneticButton>
           </div>
         </div>
@@ -202,13 +207,18 @@ const Index = () => {
               Ready to reclaim your focus?
             </p>
             <MagneticButton>
-              <span className="bg-gradient-to-r from-white to-blue-100 text-slate-800 px-8 py-4 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300">
+              <button 
+                onClick={() => setIsPopupOpen(true)}
+                className="bg-gradient-to-r from-white to-blue-100 text-slate-800 px-8 py-4 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
+              >
                 Explore The Full Collection
-              </span>
+              </button>
             </MagneticButton>
           </ScrollReveal>
         </div>
       </footer>
+
+      <SamplePopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </div>
   );
 };
