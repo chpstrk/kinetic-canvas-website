@@ -61,16 +61,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({ name, image, descripti
 
         {/* Back side */}
         <div 
-          className="absolute inset-0 flex flex-col h-full justify-center items-center text-center p-6 backface-hidden"
+          className="absolute inset-0 flex flex-col h-full p-6 backface-hidden"
           style={{ 
             backfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)'
           }}
         >
-          <h3 className="text-xl font-bold text-white mb-6 line-clamp-2">
+          <h3 className="text-xl font-bold text-white mb-6 text-left">
             {name}
           </h3>
-          <p className="text-sm text-white/90 leading-relaxed">
+          <p className="text-sm text-white/90 leading-relaxed text-left flex-grow">
             {fullDescription}
           </p>
         </div>
