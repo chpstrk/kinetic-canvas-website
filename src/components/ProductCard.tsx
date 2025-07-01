@@ -14,7 +14,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ name, image, descripti
 
   return (
     <div 
-      className="group relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-lg border border-white/20 p-6 transition-all duration-500 hover:scale-105 hover:bg-white/15 h-full flex flex-col perspective-1000"
+      className="group relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-lg border border-white/20 p-6 transition-all duration-500 hover:scale-105 hover:bg-white/15 min-h-[400px] flex flex-col perspective-1000"
       onMouseEnter={() => {
         setIsHovered(true);
         setIsFlipped(true);
@@ -40,7 +40,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ name, image, descripti
           className="absolute inset-0 flex flex-col h-full backface-hidden"
           style={{ backfaceVisibility: 'hidden' }}
         >
-          <div className="aspect-square overflow-hidden rounded-xl mb-4 bg-gradient-to-br from-white/10 to-white/5 flex-shrink-0">
+          <div className="aspect-square overflow-hidden rounded-xl mb-4 bg-gradient-to-br from-white/10 to-white/5 flex-shrink-0 max-h-48">
             <img 
               src={image} 
               alt={name}
@@ -49,11 +49,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ name, image, descripti
           </div>
           
           <div className="flex-grow flex flex-col justify-between">
-            <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-blue-200 transition-colors duration-300 line-clamp-2">
+            <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-blue-200 transition-colors duration-300 line-clamp-2">
               {name}
             </h3>
             
-            <p className="text-sm text-white/70 group-hover:text-white/90 transition-colors duration-300 line-clamp-2">
+            <p className="text-sm text-white/70 group-hover:text-white/90 transition-colors duration-300 line-clamp-3">
               {description}
             </p>
           </div>
@@ -61,13 +61,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ name, image, descripti
 
         {/* Back side */}
         <div 
-          className="absolute inset-0 flex flex-col h-full justify-center items-center text-center p-4 backface-hidden"
+          className="absolute inset-0 flex flex-col h-full justify-center items-center text-center p-6 backface-hidden"
           style={{ 
             backfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)'
           }}
         >
-          <h3 className="text-xl font-bold text-white mb-4 line-clamp-2">
+          <h3 className="text-xl font-bold text-white mb-6 line-clamp-2">
             {name}
           </h3>
           <p className="text-sm text-white/90 leading-relaxed">
