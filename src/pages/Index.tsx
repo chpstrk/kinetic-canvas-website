@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ParticleBackground } from '../components/ParticleBackground';
 import { GradientOrb } from '../components/GradientOrb';
@@ -20,6 +21,16 @@ const Index = () => {
 
     window.addEventListener('mousemove', handleMouseMove);
     setIsLoaded(true);
+
+    // Handle hash navigation after page load
+    if (window.location.hash) {
+      setTimeout(() => {
+        const element = document.querySelector(window.location.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
 
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
@@ -218,6 +229,21 @@ const Index = () => {
               </button>
             </MagneticButton>
           </ScrollReveal>
+          
+          {/* Developer Credit */}
+          <div className="mt-12 pt-8 border-t border-white/20">
+            <p className="text-sm text-white/60">
+              Made with ❤️ by{' '}
+              <a 
+                href="https://www.linkedin.com/in/i-pranjal/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 transition-colors duration-300 underline"
+              >
+                Pranjal
+              </a>
+            </p>
+          </div>
         </div>
       </footer>
 
