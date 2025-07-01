@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { ParticleBackground } from '../components/ParticleBackground';
 import { GradientOrb } from '../components/GradientOrb';
@@ -27,24 +26,28 @@ const Index = () => {
 
   const products = [
     {
-      name: "The 'Founder' Tote",
+      name: "The 'Apex' Tote",
       image: "https://i.ibb.co/952Yhsf/founder.png",
-      description: "Your mobile command center"
+      description: "Your mobile command center",
+      fullDescription: "Your mobile command center. Engineered with the structure and organization to carry your ambitions and lead with absolute control."
     },
     {
-      name: "The 'Architect' Backpack", 
+      name: "The 'Versa' Backpack", 
       image: "https://i.ibb.co/bgWBwNkX/architect.png",
-      description: "From boardroom to construction site"
+      description: "From boardroom to construction site",
+      fullDescription: "For a life in motion. A masterclass in functional elegance, designed to keep you agile and hands-free without ever compromising on style."
     },
     {
-      name: "The 'Creator' Crossbody",
+      name: "The 'Cadence' Crossbody",
       image: "https://i.ibb.co/0VBLBbcD/creator.png", 
-      description: "Creative freedom, organized"
+      description: "Creative freedom, organized",
+      fullDescription: "For the creative spark. Provides instant, frictionless access to your tools of inspiration, so you never lose your rhythm."
     },
     {
-      name: "The 'Consultant' Satchel",
+      name: "The 'Axiom' Satchel",
       image: "https://i.ibb.co/PGhbKLpM/consultant.png",
-      description: "Professional precision"
+      description: "Professional precision",
+      fullDescription: "A statement of authority. A sharp, structured silhouette that projects undeniable confidence and impeccable preparation in any high-stakes room."
     }
   ];
 
